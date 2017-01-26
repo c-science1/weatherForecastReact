@@ -1,0 +1,38 @@
+h3{
+    font-size: 120%;
+    margin: 0;
+}
+main{
+    margin-top: 15px;
+ 
+}
+.current-more-info{
+    vertical-align: bottom;
+}
+.current-more-info{
+    float:left;
+    padding: 30px 20px 0 0;
+}
+.weatherRow{
+    margin-bottom: 20px;
+}
+.weatherImg{
+    border: 1px solid lightgrey;
+    margin-right: 5px;
+}
+.tab-content{
+    padding: 10px 10px 5px 10px;
+    border: 1px solid lightgrey;
+    border-collapse: collapse;
+    border-top: 0;
+}
+@media ( min-width: 768px ){
+    h3{
+        font-size: 130%;
+    }
+    .current-more-info{
+        float: right;
+        padding: 20px 0 0 0;
+    }   
+}
+
