@@ -32,28 +32,22 @@ export default class App extends Component{
     }
 	 render(){
 		return <main className="container">
-                <div className="row">
+              <div className="row">
                 <section className="col-xs-12 col-sm-9">
                  <div className=" panel panel-default">
                   <div className="panel-heading"><h3>Weather forecast</h3></div>
-                     <div className="panel-body">
-                    <div className="col-sm-12">
-                     <div className="current">
-                        <h4></h4>
-                          <WeatherUI id={this.state.appList.id} city={this.state.appList.city} list={this.state.appList.list}
-                                  cnt={this.state.appList.cnt}/>
-                      </div>
-                    </div>
-                
-                    <div className="col-sm-12">
-               
-                    </div>
-
-                </div>       
-                  
-                </div>
+                    <div className="panel-body">
+                        <div className="col-sm-12">
+                        <div className="current">
+                            <h4></h4>
+                              <WeatherUI id={this.state.appList.id} city={this.state.appList.city} 
+                                        list={this.state.appList.list} key={this.state.appList.id}/>
+                          </div>
+                        </div>
+                    </div>       
+                  </div>
                 </section>  
-                </div>   
+              </div>   
           </main>
 	}
   
