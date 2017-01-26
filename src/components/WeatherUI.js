@@ -1,13 +1,15 @@
 import React, {Component} from 'react';
 
 import WeatherEachDay from './WeatherEachDay';
+
+import utils from '../../custom/utils';
 var day1 = [], day1Name,
     day2 = [], day2Name,
     day3 = [], day3Name,
     day4 = [], day4Name,
     day5 = [], day5Name;
 
- function formatDate(givenDate){
+ var formatDate = function (givenDate){
     let days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
         dd;
     (givenDate) ? dd = new Date((givenDate)) : dd = new Date(); 
@@ -16,7 +18,7 @@ var day1 = [], day1Name,
     return dayTime;
      
  }
- function formatTime(givenDate){
+ var formatTime = function (givenDate){
       let dd;
       (givenDate) ? dd = new Date((givenDate)) : dd = new Date(); 
 
@@ -25,7 +27,7 @@ var day1 = [], day1Name,
 
      return onlyTime;
  }
- function createNewLists(dayP, itemP){
+ var createNewLists = function (dayP, itemP){
      let itemDate = new Date(itemP.dt_txt);
      let currentDate = new Date();
    
@@ -55,7 +57,7 @@ var day1 = [], day1Name,
      }
 
  }
- function weatherImg(desc){
+ var weatherImg = function(desc){
      var imgSrc = '';
      switch(desc){
          case "few clouds":
@@ -77,11 +79,11 @@ var day1 = [], day1Name,
      }
      return imgSrc;
  }
- function celTempConversion(kelvinTemp){
+ var celTempConversion = function (kelvinTemp){
      var celTemp = kelvinTemp - 273.15;
      return Math.round(celTemp);
  }
-
+require('../../custom/utils.js');
  $( document ).ready(function() {
     $('#myTabs a').click(function (e) {
   e.preventDefault()
@@ -111,12 +113,12 @@ var day1 = [], day1Name,
 
             <div className="tab-content" id="myTabContent">
             <div role="tabpanel" className="tab-pane fade in active" id="day1">
-                        <WeatherEachDay detailsList={day1} />
+                        
                         {day1.map(function(item){
-                            return <div className="weatherRow">
+                            return <div className="weatherRow" key={item.id}>
                                             <div>
                                                 {item.weather.map(function(wDesc){
-                                                    return <div>
+                                                    return <div key={item.id}>
                                                     <img src= {weatherImg(wDesc.description)} className="weatherImg" />
                                                      <span className="weather-text">{wDesc.description}</span>  Temp:  {celTempConversion(item.main.temp)}&#x2103; &nbsp;</div>
                                                 })
@@ -124,7 +126,6 @@ var day1 = [], day1Name,
                                                 <span className="text-uppercase pull-right"> {formatTime(item.dt_txt)}</span>
                                             </div>
                                             <div>
-                                               
                                                 min:  {celTempConversion(item.main.temp_min)} &nbsp;
                                                 max:  {celTempConversion(item.main.temp_max)} &nbsp;
                                                 humidity: {item.main.humidity} &nbsp;
@@ -135,10 +136,10 @@ var day1 = [], day1Name,
             </div>
             <div role="tabpanel" className="tab-pane fade" id="day2">
                         {day2.map(function(item){
-                            return <div className="weatherRow">
+                            return <div className="weatherRow" key={item.id}>
                                            <div>
                                                 {item.weather.map(function(wDesc){
-                                                    return <div>
+                                                    return <div key={item.id}>
                                                     <img src= {weatherImg(wDesc.description)} className="weatherImg" />
                                                      <span className="weather-text">{wDesc.description}</span>  Temp:  {celTempConversion(item.main.temp)}&#x2103; &nbsp;</div>
                                                 })
@@ -158,10 +159,10 @@ var day1 = [], day1Name,
             </div>
             <div role="tabpanel" className="tab-pane fade" id="day3">
                         {day3.map(function(item){
-                            return <div className="weatherRow">
+                            return <div className="weatherRow" key={item.id}>
                                          <div>
                                                 {item.weather.map(function(wDesc){
-                                                    return <div>
+                                                    return <div key={item.id}>
                                                     <img src= {weatherImg(wDesc.description)} className="weatherImg" />
                                                      <span className="weather-text">{wDesc.description}</span>  Temp:  {celTempConversion(item.main.temp)}&#x2103; &nbsp;</div>
                                                 })
@@ -182,10 +183,10 @@ var day1 = [], day1Name,
             </div>
             <div role="tabpanel" className="tab-pane fade" id="day4">
                         {day4.map(function(item){
-                            return <div className="weatherRow">
+                            return <div className="weatherRow" key={item.id}>
                                           <div>
                                                 {item.weather.map(function(wDesc){
-                                                    return <div>
+                                                    return <div key={item.id}>
                                                     <img src= {weatherImg(wDesc.description)} className="weatherImg" />
                                                      <span className="weather-text">{wDesc.description}</span>  Temp:  {celTempConversion(item.main.temp)}&#x2103; &nbsp;</div>
                                                 })
@@ -204,10 +205,10 @@ var day1 = [], day1Name,
             </div>
             <div role="tabpanel" className="tab-pane fade" id="day5">
                         {day5.map(function(item){
-                            return <div className="weatherRow">
+                            return <div className="weatherRow" key={item.id}>
                                            <div>
                                                 {item.weather.map(function(wDesc){
-                                                    return <div>
+                                                    return <div key={item.id}>
                                                     <img src= {weatherImg(wDesc.description)} className="weatherImg" />
                                                      <span className="weather-text">{wDesc.description}</span>  Temp:  {celTempConversion(item.main.temp)}&#x2103; &nbsp;</div>
                                                 })
