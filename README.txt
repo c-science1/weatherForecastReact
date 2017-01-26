@@ -10,7 +10,9 @@ Note: I would have liked to add the following to the solution if I had more time
 
 1. Refactor WeatherUI.js by decomposing the weather details section of it into WeatherEachDay component.
 
-2. Add media queries for breakpoints below 400px so that the weather details text doesn't overlap. 
+*2. Add media queries for breakpoints below 400px so that the weather details text doesn't overlap.*
+The above is taken care off, checked in Emulator in different devices around 400px view port and it looks fine.
+
 
 3. Add unit tests in detail to test rendering and interactivity.
 
