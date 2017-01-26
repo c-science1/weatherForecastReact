@@ -20,6 +20,10 @@ main{
     border: 1px solid lightgrey;
     margin-right: 5px;
 }
+.weather-text{
+    text-transform: capitalize;
+    font-weight: bold;
+}
 .tab-content{
     padding: 10px 10px 5px 10px;
     border: 1px solid lightgrey;

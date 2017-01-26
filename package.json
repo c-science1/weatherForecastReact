@@ -18,6 +18,7 @@
     "webpack-dev-server": "^1.12.1"
   },
   "dependencies": {
+    "jquery": "1.12.2",
     "bootstrap": "^3.3.7",
     "react-bootstrap": "^0.28.1",
     "flux": "^2.0.1",

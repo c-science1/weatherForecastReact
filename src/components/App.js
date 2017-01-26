@@ -33,7 +33,7 @@ export default class App extends Component{
 	 render(){
 		return <main className="container">
                 <div className="row">
-                <section className="col-xs-10 col-sm-10">
+                <section className="col-xs-12 col-sm-9">
                  <div className=" panel panel-default">
                   <div className="panel-heading"><h3>Weather forecast</h3></div>
                      <div className="panel-body">
