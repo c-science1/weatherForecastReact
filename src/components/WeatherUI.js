@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 
 import WeatherEachDay from './WeatherEachDay';
 
-import utils from '../../custom/utils';
+//import utils from '../../custom/utils';
 var day1 = [], day1Name,
     day2 = [], day2Name,
     day3 = [], day3Name,
@@ -91,7 +91,7 @@ require('../../custom/utils.js');
 })
 });
 
- export default class Today extends Component{
+ export default class WeatherUI extends Component{
 	render(){
 
 		return <div>
@@ -233,7 +233,7 @@ require('../../custom/utils.js');
 	}
 }
 
-Today.defaultProps = {
+WeatherUI.defaultProps = {
             city: "",
             country: "",
             weatherImg : "loading...",
@@ -243,6 +243,4 @@ Today.defaultProps = {
             Wind: "loading...",
             list: []
 }
- 
- 
  
