@@ -35,7 +35,7 @@ export default class App extends Component{
               <div className="row">
                 <section className="col-xs-12 col-sm-9">
                  <div className=" panel panel-default">
-                  <div className="panel-heading"><h3>Weather forecast</h3></div>
+                  <div className="panel-heading"><h3>Weather forecast for the next 5 days</h3></div>
                     <div className="panel-body">
                         <div className="col-sm-12">
                         <div className="current">
