@@ -1,23 +1,12 @@
  In order to run the application, the required modules are need to be installed via npm.
 
-On command prompt, go to the root directory and run "npm install" to install the modules.
+Run "npm install" to install the modules in the root folder.
 
-After the modules are installed run "npm start" to start the application. 
+Run "npm start" to start the application. 
 
-Browse to http://localhost:8080/ to see the weather forecast page.
+Browse to http://localhost:8080/ to see the weather forecast page pulling data from a weather API.
 
-Note: I would have liked to add the following to the solution if I had more time
+Note: I would have liked to add unit tests in detail to test rendering of each component.
 
-1. Refactor WeatherUI.js by decomposing the weather details section of it into WeatherEachDay component.
-
-*2. Add media queries for breakpoints below 400px so that the weather details text doesn't overlap.*
-The above is taken care off, checked in Emulator in different devices around 400px view port and it looks fine.
-
-
-3. Add unit tests in detail to test rendering and interactivity.
-
-4. Looked further into the data displayed.
-
-5. Add jquery as a module for Bootstrap to work.
 
 
