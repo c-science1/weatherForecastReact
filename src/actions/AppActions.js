@@ -11,7 +11,7 @@ let AppActions = {
 	        
 			return response.json();
 	    }).then(function (apiData) {
-			console.log(apiData);
+			//console.log(apiData);
 	        AppDispatcher.dispatch({
 	            actionType: AppConstants.API_GETALL_SUCCESS,
 	            data: apiData

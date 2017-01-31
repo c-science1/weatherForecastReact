@@ -1,6 +1,9 @@
 require('bootstrap/dist/css/bootstrap.css');
 require('../custom/styles.css');
-require('bootstrap/dist/js/bootstrap.min.js');
+
+window.jQuery = require('jquery/dist/jquery');
+
+require('bootstrap/dist/js/bootstrap.min');
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './components/App';

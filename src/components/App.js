@@ -41,7 +41,7 @@ export default class App extends Component{
                         <div className="current">
                             <h4></h4>
                               <WeatherUI id={this.state.appList.id} city={this.state.appList.city} 
-                                        list={this.state.appList.list} key={this.state.appList.id}/>
+                                         list={this.state.appList.list} key={this.state.appList.id} />
                           </div>
                         </div>
                     </div>       

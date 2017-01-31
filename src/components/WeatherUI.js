@@ -5,23 +5,15 @@ import WeatherEachDay from './WeatherEachDay';
 var utilFunc = require('../../custom/utils.js');
 var utils = new utilFunc();
 
-console.log("from utils " + utils.test);
-
-$( document ).ready(function() {
-    $('#myTabs a').click(function (e) {
-  e.preventDefault()
-  $(this).tab('show')
-})
-});
 export default class WeatherUI extends Component{
 	render(){
 		return <div>
             <h4>{this.props.city.name}, {this.props.city.country}</h4>
-            {
-                this.props.list.map(function(item){
-                    {utils.createNewLists(utils.formatDate(item.dt_txt), item)}
-                })
-            }
+                {      this.props.list.map(function(item){
+                        {utils.createNewLists(utils.formatDate(item.dt_txt), item)}
+                        })        
+                }
+
             <ul className="nav nav-tabs" role="tablist" id="myTabs">
                 <li role="presentation" className="active"><a href="#day1" aria-controls="home" role="tab" data-toggle="tab">{utils.day1Name}</a></li>
                 <li role="presentation"><a href="#day2" aria-controls="Day 2" role="tab">{utils.day2Name}</a></li>
@@ -32,122 +24,22 @@ export default class WeatherUI extends Component{
 
             <div className="tab-content" id="myTabContent">
             <div role="tabpanel" className="tab-pane fade in active" id="day1">
-                        
-                        {utils.day1.map(function(item){
-                            return <div className="weatherRow" key={item.id}>
-                                            <div>
-                                                {item.weather.map(function(wDesc){
-                                                    return <div key={item.id}>
-                                                    <img src= {utils.weatherImg(wDesc.description)} className="weatherImg" />
-                                                     <span className="weather-text">{wDesc.description}</span>  Temp:  {utils.celTempConversion(item.main.temp)}&#x2103; &nbsp;</div>
-                                                })
-                                                }
-                                                <span className="text-uppercase pull-right"> {utils.formatTime(item.dt_txt)}</span>
-                                            </div>
-                                            <div>
-                                                min:  {utils.celTempConversion(item.main.temp_min)} &nbsp;
-                                                max:  {utils.celTempConversion(item.main.temp_max)} &nbsp;
-                                                humidity: {item.main.humidity} &nbsp;
-                                            <br />
-                                            </div>                           
-                                    </div>
-                        })}
+                 <WeatherEachDay key="day1" list={utils.day1} />
             </div>
             <div role="tabpanel" className="tab-pane fade" id="day2">
-                        {utils.day2.map(function(item){
-                            return <div className="weatherRow" key={item.id}>
-                                           <div>
-                                                {item.weather.map(function(wDesc){
-                                                    return <div key={item.id}>
-                                                    <img src= {utils.weatherImg(wDesc.description)} className="weatherImg" />
-                                                     <span className="weather-text">{wDesc.description}</span>  Temp:  {utils.celTempConversion(item.main.temp)}&#x2103; &nbsp;</div>
-                                                })
-                                                }
-                                                <span className="text-uppercase pull-right"> {utils.formatTime(item.dt_txt)}</span>
-                                            </div>
-                                            <div>
-                                               
-                                                min:  {utils.celTempConversion(item.main.temp_min)} &nbsp;
-                                                max:  {utils.celTempConversion(item.main.temp_max)} &nbsp;
-                                                humidity: {item.main.humidity} &nbsp;
-                                            <br />
-                                            </div>         
-                                    </div>
-                        })}
-
+                <WeatherEachDay  key="day2" list={utils.day2} />
             </div>
             <div role="tabpanel" className="tab-pane fade" id="day3">
-                        {utils.day3.map(function(item){
-                            return <div className="weatherRow" key={item.id}>
-                                         <div>
-                                                {item.weather.map(function(wDesc){
-                                                    return <div key={item.id}>
-                                                    <img src= {utils.weatherImg(wDesc.description)} className="weatherImg" />
-                                                     <span className="weather-text">{wDesc.description}</span>  Temp:  {utils.celTempConversion(item.main.temp)}&#x2103; &nbsp;</div>
-                                                })
-                                                }
-                                                <span className="text-uppercase pull-right"> {utils.formatTime(item.dt_txt)}</span>
-                                            </div>
-                                            <div>
-                                               
-                                                min:  {utils.celTempConversion(item.main.temp_min)} &nbsp;
-                                                max:  {utils.celTempConversion(item.main.temp_max)} &nbsp;
-                                                humidity: {item.main.humidity} &nbsp;
-                                            <br />
-                                            </div>          
-
-                                    </div>
-                        })}
-            
+                <WeatherEachDay  key="day3" list={utils.day3} />
             </div>
             <div role="tabpanel" className="tab-pane fade" id="day4">
-                        {utils.day4.map(function(item){
-                            return <div className="weatherRow" key={item.id}>
-                                          <div>
-                                                {item.weather.map(function(wDesc){
-                                                    return <div key={item.id}>
-                                                    <img src= {utils.weatherImg(wDesc.description)} className="weatherImg" />
-                                                     <span className="weather-text">{wDesc.description}</span>  Temp:  {utils.celTempConversion(item.main.temp)}&#x2103; &nbsp;</div>
-                                                })
-                                                }
-                                                <span className="text-uppercase pull-right"> {utils.formatTime(item.dt_txt)}</span>
-                                            </div>
-                                            <div>
-                                               
-                                                min:  {utils.celTempConversion(item.main.temp_min)} &nbsp;
-                                                max:  {utils.celTempConversion(item.main.temp_max)} &nbsp;
-                                                humidity: {item.main.humidity} &nbsp;
-                                            <br />
-                                            </div>     
-                                    </div>
-                        })}
+                <WeatherEachDay  key="day4" list={utils.day4} />
             </div>
             <div role="tabpanel" className="tab-pane fade" id="day5">
-                        {utils.day5.map(function(item){
-                            return <div className="weatherRow" key={item.id}>
-                                           <div>
-                                                {item.weather.map(function(wDesc){
-                                                    return <div key={item.id}>
-                                                    <img src= {utils.weatherImg(wDesc.description)} className="weatherImg" />
-                                                     <span className="weather-text">{wDesc.description}</span>  Temp:  {utils.celTempConversion(item.main.temp)}&#x2103; &nbsp;</div>
-                                                })
-                                                }
-                                                <span className="text-uppercase pull-right"> {utils.formatTime(item.dt_txt)}</span>
-                                            </div>
-                                            <div>
-                                               
-                                                min:  {utils.celTempConversion(item.main.temp_min)} &nbsp;
-                                                max:  {utils.celTempConversion(item.main.temp_max)} &nbsp;
-                                                humidity: {item.main.humidity} &nbsp;
-                                            <br />
-                                            </div>  
-                                    </div>
-                        })}
-
+                <WeatherEachDay  key="day5" list={utils.day5} />
             </div>
-</div>
-            
-        
+                    
+        </div>
         </div>
 	}
 }
@@ -162,6 +54,13 @@ WeatherUI.defaultProps = {
             Wind: "loading...",
             list: []
 }
- 
+
+var $ = require('jquery/dist/jquery');
+$( document ).ready(function() {
+    $('#myTabs a').click(function (e) {
+  e.preventDefault()
+  $(this).tab('show')
+})
+});
  
  

@@ -19,7 +19,9 @@ module.exports = {
             include: path.join(__dirname, 'src')
         },
         {test: /\.css$/, loader: "style-loader!css-loader"},
-        {test: /\.(png|woff|woff2|eot|ttf|svg)$/, loader: 'url-loader?limit=100000'}
+        {test: /\.(png|woff|woff2|eot|ttf|svg)$/, loader: 'url-loader?limit=100000'},
+        {test: /vendor\/.+\.(jsx|js)$/, loader: 'imports?jQuery=jquery,$=jquery,this=>window'
+        }
         ]
     }
 };
