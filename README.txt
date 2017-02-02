@@ -1,4 +1,4 @@
- In order to run the application, the required modules are need to be installed via npm.
+ In order to run the application, the required modules are needed to be installed via npm.
 
 Run "npm install" to install the modules in the root folder.
 
