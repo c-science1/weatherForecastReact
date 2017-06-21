@@ -3,8 +3,8 @@ import React, {Component} from 'react';
 var utilFunc = require('../../custom/utils.js');
 var utils = new utilFunc();
 
-export default class WeatherEachDay extends Component{
-	render(){
+class WeatherEachDay extends Component {
+render(){
         return  <div>
                 {this.props.list.map(function(item){
                          return <div className="weatherRow" key={item.id}>
@@ -30,3 +30,5 @@ export default class WeatherEachDay extends Component{
         }
 
  }
+ 
+ export default WeatherEachDay;
