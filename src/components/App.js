@@ -7,13 +7,13 @@ import WeatherUI from './WeatherUI';
 
 export default class App extends Component{
     
-    componentWillMount(){
+    componentWillMount() {
         AppActions.apiGetAll();
     }
-    componentDidMount(){
+    componentDidMount() {
         AppStore.addChangeListener(this.onChange);
     }
-    componentWillUnmount(){
+    componentWillUnmount() {
          AppStore.removeChangeListener(this.onChange);
     }
     onChange(){

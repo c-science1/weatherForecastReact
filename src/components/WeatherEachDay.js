@@ -1,6 +1,8 @@
+'use strict';
+
 import React, {Component} from 'react';
 
-var utilFunc = require('../../custom/utils.js');
+var utilFunc = require('../custom/utils.js');
 var utils = new utilFunc();
 
 class WeatherEachDay extends Component {

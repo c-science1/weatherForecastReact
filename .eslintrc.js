@@ -4,28 +4,47 @@ module.exports = {
         "commonjs": true,
         "es6": true
     },
-    "extends": "eslint:recommended",
-    "parser": "babel-eslint",
+    "extends": "babel",
     "parserOptions": {
+        "ecmaVersion": 7,
         "ecmaFeatures": {
             "experimentalObjectRestSpread": true,
-            "jsx": true
-        },
-        "sourceType": "module"
+            "jsx": true,
+            "arrowFunctions": true,
+            "binaryLiterals": true,
+            "blockBindings": true,
+            "classes": true,
+            "defaultParams": true,
+            "destructuring": true,
+            "forOf": true,
+            "generators": true,
+            "modules": true,
+            "objectLiteralComputedProperties": true,
+            "objectLiteralDuplicateProperties": true,
+            "objectLiteralShorthandMethods": true,
+            "objectLiteralShorthandProperties": true,
+            "octalLiterals": true,
+            "regexUFlag": true,
+            "regexYFlag": true,
+            "restParams": true,
+            "spread": true,
+            "superInFunctions": true,
+            "templateStrings": true,
+            "unicodeCodePointEscapes": true,
+            "globalReturn": true
+            },
+            "sourceType": "module"
     },
     "plugins": [
-        "babel",
-        "react"
+        "babel"
     ],
     "rules": {
         "accessor-pairs": "error",
-        "array-bracket-newline": "off",
         "array-bracket-spacing": [
             "error",
             "never"
         ],
         "array-callback-return": "error",
-        "array-element-newline": "error",
         "arrow-body-style": "error",
         "arrow-parens": "error",
         "arrow-spacing": "error",
@@ -58,7 +77,6 @@ module.exports = {
         "dot-notation": "error",
         "eol-last": "error",
         "eqeqeq": "error",
-        "for-direction": "error",
         "func-call-spacing": "error",
         "func-name-matching": "error",
         "func-names": [
@@ -74,7 +92,6 @@ module.exports = {
         "id-length": "error",
         "id-match": "error",
         "indent": "off",
-        "indent-legacy": "off",
         "init-declarations": "error",
         "jsx-quotes": "error",
         "key-spacing": "off",
@@ -106,9 +123,9 @@ module.exports = {
         "no-array-constructor": "error",
         "no-await-in-loop": "error",
         "no-bitwise": "error",
-        "no-buffer-constructor": "error",
         "no-caller": "error",
         "no-catch-shadow": "error",
+        "no-compare-neg-zero": "error",
         "no-confusing-arrow": "error",
         "no-continue": "error",
         "no-div-regex": "error",
@@ -187,6 +204,7 @@ module.exports = {
         "no-useless-computed-key": "error",
         "no-useless-concat": "error",
         "no-useless-constructor": "error",
+        "no-useless-escape": "error",
         "no-useless-rename": "error",
         "no-useless-return": "error",
         "no-var": "off",
@@ -212,7 +230,6 @@ module.exports = {
         "operator-assignment": "error",
         "operator-linebreak": "error",
         "padded-blocks": "off",
-        "padding-line-between-statements": "error",
         "prefer-arrow-callback": "off",
         "prefer-const": "error",
         "prefer-destructuring": "error",
@@ -230,10 +247,6 @@ module.exports = {
         "rest-spread-spacing": "error",
         "semi": "error",
         "semi-spacing": "error",
-        "semi-style": [
-            "error",
-            "last"
-        ],
         "sort-imports": "error",
         "sort-keys": "off",
         "sort-vars": "error",
@@ -247,7 +260,6 @@ module.exports = {
         "space-unary-ops": "error",
         "spaced-comment": "error",
         "strict": "off",
-        "switch-colon-spacing": "error",
         "symbol-description": "error",
         "template-curly-spacing": "error",
         "template-tag-spacing": "error",

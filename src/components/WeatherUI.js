@@ -1,17 +1,17 @@
 'use strict';
 
 import React, {Component} from 'react';
- var $ = require('jquery/dist/jquery');
+var $ = require('jquery/dist/jquery');
 
 //App component
 import WeatherEachDay from './WeatherEachDay';
+import SingleDayTab from './SingleDayTab';
 
-var utilFunc = require('./custom/utils.js');
+//Extra utility functions in a separate module
+var utilFunc = require('../custom/utils.js');
 var utils = new utilFunc();
 
 class WeatherUI extends Component {
-     
-    showContent = e => $(`#${e.target.id}`).tab('show');
     
     render() {
         return (
@@ -22,21 +22,13 @@ class WeatherUI extends Component {
                         })        
                     } 
                     <ul className="nav nav-tabs" role="tablist" id="myTabs">
-                        <li role="presentation" className="active">
-                            <a href="#day1" onClick={this.showContent} id="day1Tab" aria-controls="home" role="tab" data-toggle="tab">{utils.day1Name}</a>
-                        </li>
-                        <li role="presentation">
-                            <a href="#day2" onClick={this.showContent} id="day2Tab" aria-controls="Day 2" role="tab">{utils.day2Name}</a>
-                        </li>
-                        <li role="presentation">
-                            <a href="#day3" onClick={this.showContent} id="day3Tab" aria-controls="Day 3" role="tab">{utils.day3Name}</a>
-                        </li>
-                        <li role="presentation">
-                            <a href="#day4" onClick={this.showContent} id="day4Tab" aria-controls="Day 4" role="tab">{utils.day4Name}</a>
-                        </li>
-                        <li role="presentation">
-                            <a href="#day5" onClick={this.showContent} id="day5Tab" aria-controls="Day 5" role="tab">{utils.day5Name}</a>
-                        </li>
+                        <SingleDayTab id="day1Tab" name={utils.day1Name} activeClass="active" />
+                        <SingleDayTab id="day2Tab" name={utils.day2Name} activeClass="" />
+                        <SingleDayTab id="day3Tab" name={utils.day3Name} activeClass="" />
+                        <SingleDayTab id="day4Tab" name={utils.day4Name} activeClass="" />
+                        <SingleDayTab id="day5Tab" name={utils.day5Name} activeClass="" />
+                        <SingleDayTab id="day6Tab" name={utils.day6Name} activeClass="" />
+                        <SingleDayTab id="day7Tab" name={utils.day7Name} activeClass="" />
                     </ul>
 
                     <div className="tab-content" id="myTabContent">
@@ -56,6 +48,7 @@ class WeatherUI extends Component {
                             <WeatherEachDay key="day5" list={utils.day5} />
                         </div>
                     </div>
+                  
                 </div>
             );
 	}
